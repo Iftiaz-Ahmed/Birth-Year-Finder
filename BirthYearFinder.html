@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Birth Year Finder</title>
+	<style>
+		
+		@import url('https://fonts.googleapis.com/css?family=Merienda&display=swap');
+
+
+		body{
+			font-family: 'Merienda', cursive;
+		}
+
+	</style>
+</head>
+<body style="background: black;">
+
+	<form  style="text-align: center;">
+
+		<h1 style="color: white;margin-top: 50px;">Birth Year Finder</h1>
+		
+		<div class="container" style="padding: 100px;">
+			<input type="number" name="number" placeholder="Enter your age here" id="number" style="height: 40px; width: 400px;">
+			<input type="button" name="button"  value="Find Year" id="button" style="height: 45px; width: 100px;">
+		</div>
+
+		<h1 style="color: red;" id="result"></h1>
+
+
+	</form>
+
+	<footer style="position:fixed; bottom: 0px; left: 40%;">
+		<h3 style="color: white;">All rights reserved by Iftiaz Ahmed</h3>
+	</footer>
+
+	<script type="text/javascript">
+
+		function calculate(){
+
+			var number = document.getElementById("number").value;
+			var date = new Date().getFullYear();
+			var birthYear = date - number;
+
+			if (number == "" || number == 0){
+				window.alert("Please enter correct age");
+			}
+
+			else
+				document.getElementById("result").innerHTML = "Your Birth Year is: " + birthYear;
+
+		}
+		
+		document.getElementById("button").onclick = function(){ calculate(); };
+
+
+	</script>
+
+</body>
+</html>
